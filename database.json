@@ -1,0 +1,44 @@
+{   "settings": {
+        "font_style": "Candara",
+        "font_size": "12",
+        "font_color": "white",
+        "window_title": "Easy Apply",
+        "window_width": 800,
+        "window_length": 800,
+        "background_color": "#303030"
+        },
+    "full_name": "",
+    "intro": "",
+    "skills": "",
+    "achievements": "",
+    "education": {
+        "1": {
+          "school": "",
+          "subject": ""
+        },
+        "2": {
+            "school": "",
+            "subject": ""
+          }
+        },
+    "languages": {
+        "English": "Professional",
+        "German": "Beginner"
+    },
+    "experience": {
+        "1": {
+            "from": "",
+            "to": "",
+            "company": "",
+            "title": "",
+            "description": ""
+        },
+        "2": {
+            "from": "",
+            "to": "",
+            "company": "",
+            "title": "",
+            "description": ""
+        }
+        }   
+  }
