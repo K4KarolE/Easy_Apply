@@ -1,14 +1,23 @@
 {   "settings": {
         "font_style": "Candara",
-        "font_size": "12",
+        "font_size": "18",
         "font_color": "white",
         "window_title": "Easy Apply",
-        "window_width": 800,
-        "window_length": 800,
-        "background_color": "#303030"
+        "window_width": 1200,
+        "window_length": 900,
+        "background_color": "#303030",
+        "field_background_color": "#606060",
+        "field_font_color": "white"
         },
-    "full_name": "",
-    "intro": "",
+    "full_name": "Test the name baby",
+    "intro": "Two New Yorkers accused of murder in rural Alabama while on their way back to college call in the help of one of their cousins, a loudmouth lawyer with no trial experience.",
+    "contacts": {
+        "email": "test_email@test.com",
+        "mobile": "07751842184",
+        "linkedin": "linkedin/best_employee_ever",
+        "github": "github/code_warrior",
+        "": ""
+        },
     "skills": "",
     "achievements": "",
     "education": {
