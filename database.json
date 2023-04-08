@@ -4,7 +4,7 @@
         "font_color": "white",
         "window_title": "Easy Apply",
         "window_width": 1200,
-        "window_length": 900,
+        "window_length": 1100,
         "background_color": "#303030",
         "field_background_color": "#606060",
         "field_font_color": "white"
@@ -16,7 +16,7 @@
         "mobile": "07751842184",
         "linkedin": "linkedin/best_employee_ever",
         "github": "github/code_warrior",
-        "": ""
+        "website": ""
         },
     "skills": "",
     "achievements": "",
@@ -36,18 +36,25 @@
     },
     "experience": {
         "1": {
-            "from": "",
-            "to": "",
-            "company": "",
-            "title": "",
-            "description": ""
+            "title": "1st title",
+            "company": "1st company",
+            "description": "1\n2\n3\n4\n5\n5+\n6\n7\n8\n9\n10",
+            "from": "12/12/2019",
+            "to": "present"
         },
         "2": {
-            "from": "",
-            "to": "",
-            "company": "",
-            "title": "",
-            "description": ""
+            "title": "2nd title",
+            "company": "2nd company",
+            "description": "2nd description",
+            "from": "2nd from",
+            "to": "2nd to"
+        },
+        "3": {
+            "title": "3rd title",
+            "company": "3rd company",
+            "description": "3rd description",
+            "from": "3rd from",
+            "to": "3rd to"
         }
         }   
   }
