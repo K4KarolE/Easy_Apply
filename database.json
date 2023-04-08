@@ -1,60 +1,61 @@
-{   "settings": {
-        "font_style": "Candara",
-        "font_size": "18",
-        "font_color": "white",
-        "window_title": "Easy Apply",
-        "window_width": 1200,
-        "window_length": 1100,
-        "background_color": "#303030",
-        "field_background_color": "#606060",
-        "field_font_color": "white"
-        },
-    "full_name": "Test the name baby",
-    "intro": "Two New Yorkers accused of murder in rural Alabama while on their way back to college call in the help of one of their cousins, a loudmouth lawyer with no trial experience.",
-    "contacts": {
-        "email": "test_email@test.com",
-        "mobile": "07751842184",
-        "linkedin": "linkedin/best_employee_ever",
-        "github": "github/code_warrior",
-        "website": ""
-        },
-    "skills": "",
-    "achievements": "",
-    "education": {
-        "1": {
-          "school": "",
-          "subject": ""
-        },
-        "2": {
-            "school": "",
-            "subject": ""
-          }
-        },
-    "languages": {
-        "English": "Professional",
-        "German": "Beginner"
+{
+  "settings": {
+    "font_style": "Candara",
+    "font_size": "18",
+    "font_color": "red",
+    "window_title": "Easy Apply",
+    "window_width": 1200,
+    "window_length": 1100,
+    "background_color": "#303030",
+    "field_background_color": "#606060",
+    "field_font_color": "white"
+  },
+  "full_name": "Test the name baby 2",
+  "intro": "2nd Two New Yorkers accused of murder in rural Alabama while on their way back to college call in the help of one of their cousins, a loudmouth lawyer with no trial experience.",
+  "contacts": {
+    "email": "test_email@test.commm",
+    "mobile": "07751842184",
+    "linkedin": "linkedin/best_employee_ever",
+    "github": "github/code_warrior",
+    "website": "eee"
+  },
+  "skills": "",
+  "achievements": "",
+  "education": {
+    "1": {
+      "school": "",
+      "subject": ""
     },
-    "experience": {
-        "1": {
-            "title": "1st title",
-            "company": "1st company",
-            "description": "1\n2\n3\n4\n5\n5+\n6\n7\n8\n9\n10",
-            "from": "12/12/2019",
-            "to": "present"
-        },
-        "2": {
-            "title": "2nd title",
-            "company": "2nd company",
-            "description": "2nd description",
-            "from": "2nd from",
-            "to": "2nd to"
-        },
-        "3": {
-            "title": "3rd title",
-            "company": "3rd company",
-            "description": "3rd description",
-            "from": "3rd from",
-            "to": "3rd to"
-        }
-        }   
+    "2": {
+      "school": "",
+      "subject": ""
+    }
+  },
+  "languages": {
+    "English": "Professional",
+    "German": "Beginner"
+  },
+  "experience": {
+    "1": {
+      "title": "1st title 1",
+      "company": "1st company 1",
+      "description": "11\n2\n3\n4\n5\n5+\n6\n7\n8\n9\n10",
+      "from": "12/12/2019",
+      "to": "present 1"
+    },
+    "2": {
+      "title": "2nd title 2",
+      "company": "2nd company 2",
+      "description": "2nd description 2",
+      "from": "2nd from 2",
+      "to": "2nd to 2"
+    },
+    "3": {
+      "title": "3rd title 3",
+      "company": "3rd company 3",
+      "description": "3rd description 3",
+      "from": "3rd from 3",
+      "to": "3rd to 3"
+    }
   }
+}
