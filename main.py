@@ -104,16 +104,7 @@ pyperclip.copy(database['contacts']['email'])
 
 
 ### WIDGETS
-x_base=30
-x_base_field = 35
-y_base=40
-y_base_right_side = window_width-300
-y_gap=40
 self = {}   # store the widgets for able to save the update
-
-def y_location(gap):
-    location = y_base + 40 * gap
-    return location
 
 def create_text(text, x, y):
     self[text] = Title(text, font_style, font_size).create()
@@ -143,33 +134,96 @@ def create_field_plus(dic_name, field_name, width, height, x, y):   # for EXPERE
     #     self[dic_name].configure(yscrollcommand = scrollbar.set)
     #     # scrollbar.place(x=x, y=y) #(relx=1, rely=0, relheight=1, anchor='ne')
 
+# COPY BUTTON
+def copy(field_value):
+    pyperclip.copy(field_value)
+
+def copy_button(field_value, x, y):
+    c_button = Buttons('C', lambda:[copy(self[field_value].get("1.0", "end-1c"))]).create()
+    c_button.configure(height=1, width=2, font=(font_style, 10))
+    c_button.place(x=x, y=y)
+
+def y_location(gap):
+    location = y_base + 40 * gap
+    return location
+
+def y_cb_location(gap):     # for COPY BUTTON
+    location = y_cb_left_base + 40 * gap
+    return location
+
+# PACING
+x_base=50
+x_base_field = x_base + 5
+y_base=40
+x_base_right_side = window_width-300
+x_base_right_side_field = x_base_right_side + 5
+x_base_right_side_button = x_base_right_side - 25
+y_gap=40
+# COPY BUTTON
+x_cb_left_base = x_base - 25
+y_cb_left_base = 48
 
 # FULL NAME
 create_text('FULL NAME', x_base, y_location(0))
 create_field('full_name', 22, 1, x_base_field, y_location(1))
+copy_button('full_name', x_cb_left_base, y_cb_left_base)
 
 # INTRO
 create_text('INTRO', x_base, y_location(2))
 create_field('intro', 80, 5, x_base_field, y_location(3))
-
+copy_button('intro', x_cb_left_base, y_cb_location(2))
 
 # CONTACTS
-create_text('CONTACTS', y_base_right_side, y_location(2))
+create_text('CONTACTS', x_base_right_side, y_location(2))
 n=3
 for item in database['contacts']:
-    create_contacts_field(item, 26, 1, y_base_right_side+5, y_location(n))
+    create_contacts_field(item, 26, 1, x_base_right_side_field, y_location(n))
+    copy_button(item, x_base_right_side_button, y_location(n)+3)
     n += 1
+
+# EDUCATION
+create_text('EDUCATION', x_base_right_side, y_location(9))
+n=10
+for item in database['education']:
+    # SUBJECT
+    create_field_plus('education', "subject", 26, 1, x_base_right_side_field, y_location(n))
+    copy_button(f'{item}_subject', x_base_right_side_button, y_location(n)+3)
+    # SCHOOL
+    create_field_plus('education', "school", 26, 1, x_base_right_side_field, y_location(n+1))
+    copy_button(f'{item}_school', x_base_right_side_button, y_location(n+1)+3)
+    # FROM
+    gap = 30
+    create_field_plus('education', "from_edu", 8, 1, x_base_right_side_field+gap, y_location(n+2))
+    copy_button(f'{item}_from_edu', x_base_right_side_button+gap, y_location(n+2)+3)
+    # TO
+    create_field_plus('education', "to_edu", 8, 1, x_base_right_side_field+180, y_location(n+2))
+    copy_button(f'{item}_to_edu', x_base_right_side_field+150, y_location(n+2)+3)
+    n += 3
+
+# SKILLS
+create_text('SKILLS', x_base_right_side, y_location(17))
+create_field('skills', 26, 12, x_base_right_side_field, y_location(18))
+copy_button('skills', x_base_right_side_button, y_location(17)+6)
 
 # EXPEREIENCE
 create_text('EXPERIENCE', x_base, y_location(7))
 n=8
 for item in database['experience']:
+    #TITLE
     create_field_plus('experience', "title", 22, 1, x_base_field, y_location(n))
+    copy_button(f'{item}_title', x_cb_left_base, y_location(n))
+    #COMPANY
     create_field_plus('experience', "company", 22, 1, x_base_field, y_location(n+1))
+    copy_button(f'{item}_company', x_cb_left_base, y_location(n+1))
+    # DESCRIPTION
     create_field_plus('experience', "description", 80, 5, x_base_field, y_location(n+2))
-    # FROM / TO
+    copy_button(f'{item}_description', x_cb_left_base, y_location(n+2))
+    # FROM
     create_field_plus('experience', "from", 8, 1, x_base_field+300, y_location(n))
+    copy_button(f'{item}_from', x_cb_left_base+300, y_location(n))
+    # TO
     create_field_plus('experience', "to", 8, 1, x_base_field+300, y_location(n+1))
+    copy_button(f'{item}_to', x_cb_left_base+300, y_location(n+1))
     n += 6
 
 # SAVE BUTTON
@@ -181,15 +235,22 @@ def save_update():
     # CONTACTS
     for contacts_type in database['contacts']:
         database['contacts'][contacts_type] = self[contacts_type].get("1.0", "end-1c")
+    # EDUCATION
+    for item in database['education']:
+        for field_name in database['education'][item]:
+            unique_name = f'{item}_{field_name}'
+            database['education'][item][field_name] = self[unique_name].get("1.0", "end-1c")
+    # SKILLS
+    database['skills'] = self['skills'].get("1.0", "end-1c")
     # EXPERIENCE
     for item in database['experience']:
         for field_name in database['experience'][item]:
             unique_name = f'{item}_{field_name}'
             database['experience'][item][field_name] = self[unique_name].get("1.0", "end-1c")
-
     save_db(database)
 
 save_button = Buttons('SAVE', save_update).create()
-save_button.place(x=window_width-100, y=y_base)
+save_button.place(x=window_width-105, y=y_base)
+
 
 mainloop()

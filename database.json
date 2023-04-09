@@ -5,12 +5,12 @@
     "font_color": "red",
     "window_title": "Easy Apply",
     "window_width": 1200,
-    "window_length": 1100,
+    "window_length": 1070,
     "background_color": "#303030",
     "field_background_color": "#606060",
     "field_font_color": "white"
   },
-  "full_name": "Test the name baby 2",
+  "full_name": "Karoly Egyed",
   "intro": "2nd Two New Yorkers accused of murder in rural Alabama while on their way back to college call in the help of one of their cousins, a loudmouth lawyer with no trial experience.",
   "contacts": {
     "email": "test_email@test.commm",
@@ -19,16 +19,20 @@
     "github": "github/code_warrior",
     "website": "eee"
   },
-  "skills": "",
+  "skills": "\u2022Analytical Thinking\n\u2022Creative Problem Solving\n\u2022Out of the Box Thinking\n\u2022Eye for Detail\n\u2022Team Player\n\u2022Communication Skills\n\u2022Striving for Excellence",
   "achievements": "",
   "education": {
     "1": {
-      "school": "",
-      "subject": ""
+      "school": "22",
+      "subject": "11",
+      "from_edu": "33",
+      "to_edu": "44"
     },
     "2": {
-      "school": "",
-      "subject": ""
+      "school": "2",
+      "subject": "1",
+      "from_edu": "3",
+      "to_edu": "4"
     }
   },
   "languages": {
@@ -37,8 +41,8 @@
   },
   "experience": {
     "1": {
-      "title": "1st title 1",
-      "company": "1st company 1",
+      "title": "1st title 2",
+      "company": "1st company 3",
       "description": "11\n2\n3\n4\n5\n5+\n6\n7\n8\n9\n10",
       "from": "12/12/2019",
       "to": "present 1"
@@ -54,7 +58,7 @@
       "title": "3rd title 3",
       "company": "3rd company 3",
       "description": "3rd description 3",
-      "from": "3rd from 3",
+      "from": "3rd from",
       "to": "3rd to 3"
     }
   }
