@@ -99,7 +99,7 @@ working_directory = os.path.dirname(__file__)
 path_icon = Path(working_directory, "pictures", "icon.ico") 
 window.iconbitmap(path_icon)
 
-# COPY TO CLIPBOARD
+# COPY TO CLIPBOARD AT START
 pyperclip.copy(database['contacts']['email'])
 
 
@@ -147,83 +147,76 @@ def y_location(gap):
     location = y_base + 40 * gap
     return location
 
-def y_cb_location(gap):     # for COPY BUTTON
-    location = y_cb_left_base + 40 * gap
-    return location
 
 # PACING
-x_base=50
-x_base_field = x_base + 5
 y_base=40
-x_base_right_side = window_width-300
-x_base_right_side_field = x_base_right_side + 5
-x_base_right_side_button = x_base_right_side - 25
-y_gap=40
-# COPY BUTTON
-x_cb_left_base = x_base - 25
-y_cb_left_base = 48
+x_left_side_field = 55
+x_left_side_button = 25
+x_right_side_field = window_width-295
+x_right_side_button = window_width-325
+
 
 # FULL NAME
-create_text('FULL NAME', x_base, y_location(0))
-create_field('full_name', 25, 1, x_base_field, y_location(1))
-copy_button('full_name', x_cb_left_base, y_cb_left_base)
+create_text('FULL NAME', x_left_side_button-5, y_location(0))
+create_field('full_name', 25, 1, x_left_side_field, y_location(1))
+copy_button('full_name', x_left_side_button, y_location(1))
 
 # INTRO
-create_text('INTRO', x_base, y_location(2))
-create_field('intro', 80, 5, x_base_field, y_location(3))
-copy_button('intro', x_cb_left_base, y_cb_location(2))
+create_text('INTRO', x_left_side_button-5, y_location(2))
+create_field('intro', 80, 5, x_left_side_field, y_location(3))
+copy_button('intro', x_left_side_button, y_location(3))
 
 # CONTACTS
-create_text('CONTACTS', x_base_right_side, y_location(2))
+create_text('CONTACTS', x_right_side_button-5, y_location(2))
 n=3
 for item in database['contacts']:
-    create_contacts_field(item, 26, 1, x_base_right_side_field, y_location(n))
-    copy_button(item, x_base_right_side_button, y_location(n))
+    create_contacts_field(item, 26, 1, x_right_side_field, y_location(n))
+    copy_button(item, x_right_side_button, y_location(n))
     n += 1
 
 # EDUCATION
-create_text('EDUCATION', x_base_right_side, y_location(9))
+create_text('EDUCATION', x_right_side_button-5, y_location(9))
 n=10
 for item in database['education']:
     # SUBJECT
-    create_field_plus('education', "subject", 26, 1, x_base_right_side_field, y_location(n))
-    copy_button(f'{item}_subject', x_base_right_side_button, y_location(n))
+    create_field_plus('education', "subject", 26, 1, x_right_side_field, y_location(n))
+    copy_button(f'{item}_subject', x_right_side_button, y_location(n))
     # SCHOOL
-    create_field_plus('education', "school", 26, 1, x_base_right_side_field, y_location(n+1))
-    copy_button(f'{item}_school', x_base_right_side_button, y_location(n+1))
+    create_field_plus('education', "school", 26, 1, x_right_side_field, y_location(n+1))
+    copy_button(f'{item}_school', x_right_side_button, y_location(n+1))
     # FROM
     gap = 50
-    create_field_plus('education', "from_edu", 8, 1, x_base_right_side_field+gap, y_location(n+2))
-    copy_button(f'{item}_from_edu', x_base_right_side_button+gap, y_location(n+2))
+    create_field_plus('education', "from_edu", 8, 1, x_right_side_field+gap, y_location(n+2))
+    copy_button(f'{item}_from_edu', x_right_side_button+gap, y_location(n+2))
     # TO
-    create_field_plus('education', "to_edu", 8, 1, x_base_right_side_field+180, y_location(n+2))
-    copy_button(f'{item}_to_edu', x_base_right_side_field+150, y_location(n+2))
+    create_field_plus('education', "to_edu", 8, 1, x_right_side_field+180, y_location(n+2))
+    copy_button(f'{item}_to_edu', x_right_side_field+150, y_location(n+2))
     n += 3
 
 # SKILLS
-create_text('SKILLS', x_base_right_side, y_location(17))
-create_field('skills', 26, 12, x_base_right_side_field, y_location(18))
-copy_button('skills', x_base_right_side_button, y_location(17)+7)
+create_text('SKILLS', x_right_side_button-5, y_location(17))
+create_field('skills', 26, 12, x_right_side_field, y_location(18))
+copy_button('skills', x_right_side_button, y_location(18))
 
 # EXPEREIENCE
-create_text('EXPERIENCE', x_base, y_location(7))
+create_text('EXPERIENCE', x_left_side_button-5, y_location(7))
 n=8
 for item in database['experience']:
     #TITLE
-    create_field_plus('experience', "title", 25, 1, x_base_field, y_location(n))
-    copy_button(f'{item}_title', x_cb_left_base, y_location(n))
+    create_field_plus('experience', "title", 25, 1, x_left_side_field, y_location(n))
+    copy_button(f'{item}_title', x_left_side_button, y_location(n))
     #COMPANY
-    create_field_plus('experience', "company", 25, 1, x_base_field, y_location(n+1))
-    copy_button(f'{item}_company', x_cb_left_base, y_location(n+1))
+    create_field_plus('experience', "company", 25, 1, x_left_side_field, y_location(n+1))
+    copy_button(f'{item}_company', x_left_side_button, y_location(n+1))
     # DESCRIPTION
-    create_field_plus('experience', "description", 80, 5, x_base_field, y_location(n+2))
-    copy_button(f'{item}_description', x_cb_left_base, y_location(n+2))
+    create_field_plus('experience', "description", 80, 5, x_left_side_field, y_location(n+2))
+    copy_button(f'{item}_description', x_left_side_button, y_location(n+2))
     # FROM
-    create_field_plus('experience', "from", 9, 1, x_base_field+300, y_location(n))
-    copy_button(f'{item}_from', x_cb_left_base+300, y_location(n))
+    create_field_plus('experience', "from", 9, 1, x_left_side_field+300, y_location(n))
+    copy_button(f'{item}_from', x_left_side_button+300, y_location(n))
     # TO
-    create_field_plus('experience', "to", 9, 1, x_base_field+300, y_location(n+1))
-    copy_button(f'{item}_to', x_cb_left_base+300, y_location(n+1))
+    create_field_plus('experience', "to", 9, 1, x_left_side_field+300, y_location(n+1))
+    copy_button(f'{item}_to', x_left_side_button+300, y_location(n+1))
     n += 6
 
 # SAVE BUTTON
