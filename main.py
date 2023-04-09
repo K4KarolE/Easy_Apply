@@ -57,7 +57,7 @@ class Fields:
                     height = self.height,
                     foreground=field_font_color,
                     background=self.background,
-                    font=(font_style, "14", "bold"))
+                    font=(font_style, "14")) #(font_style, "14", "bold") 
 
 # TITLE
 class Title:
