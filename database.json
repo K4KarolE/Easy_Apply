@@ -61,5 +61,37 @@
       "from": "05/06/2014",
       "to": "05/11/2019"
     }
-  }
+  },
+  "experience_2nd": {
+    "4": {
+      "title": "BA 2nd",
+      "company": "G 2nd",
+      "description": "DESC 2nd",
+      "from": "1",
+      "to": "1"
+    },
+    "5": {
+      "title": "2 t",
+      "company": "2 c",
+      "description": "2 des",
+      "from": "2 f",
+      "to": "2 t"
+    },
+    "6": {
+      "title": "3 t",
+      "company": "3 c",
+      "description": "3 des",
+      "from": "3 f",
+      "to": "3 t"
+    },
+    "7": {
+      "title": "4 t",
+      "company": "4 c",
+      "description": "4 des",
+      "from": "4 f ",
+      "to": "4 t"
+    }
+  },
+  "achievements_2nd": "ach 2ndascasc",
+  "extra_2nd": "ext 2ndassas"
 }

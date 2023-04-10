@@ -4,6 +4,8 @@ import os
 from pathlib import Path
 import pyperclip
 
+import second_page
+
 
 def main_directory():
     functions_directory = os.path.dirname(__file__)  
@@ -22,7 +24,7 @@ def open_db(name_json):
     return json_dictionary
 
 def save_db(database):
-    with open('database.json', 'w') as f:
+    with open(path_json('database.json'), 'w') as f:
         json.dump(database, f, indent=2)
 
 
@@ -89,7 +91,7 @@ window.title(database['settings']['window_title'])
 window_width = database['settings']['window_width']
 window_length = database['settings']['window_length']
 screen_width = window.winfo_screenwidth()
-screen_height = window.winfo_screenheight()
+# screen_height = window.winfo_screenheight()
 window.geometry(f'{window_width}x{window_length}+%d+%d' % (screen_width/1.9, 0))    # (screen_width/2-275, screen_height/8) - position to the middle of the screen
 window.resizable(0,0)   # locks the main window
 window.configure(background=background_color)
@@ -242,8 +244,11 @@ def save_update():
             database['experience'][item][field_name] = self[unique_name].get("1.0", "end-1c")
     save_db(database)
 
-save_button = Buttons('SAVE', save_update).create()
+save_button = Buttons('Save', save_update).create()
 save_button.place(x=window_width-95, y=y_location(0)+10)
 
+# 2ND PAGE BUTTON
+second_page_button = Buttons('2nd', lambda: [second_page.launch(window)]).create()
+second_page_button.place(x=window_width-165, y=y_location(0)+10)
 
 mainloop()
