@@ -12,11 +12,9 @@ def main_directory():
     directory = functions_directory.replace("functions",'')
     return directory
 
-
 def path_json(name_json):
     path_json = Path(main_directory(), name_json)
     return path_json
-
 
 def open_db(name_json):
     f = open(path_json(name_json))
@@ -26,7 +24,6 @@ def open_db(name_json):
 def save_db(database):
     with open(path_json('database.json'), 'w') as f:
         json.dump(database, f, indent=2)
-
 
 # BUTTONS
 class Buttons:
@@ -77,7 +74,6 @@ class Title:
 
 # LOAD DB
 database = open_db("database.json")
-
 background_color = database['settings']['background_color']
 field_background_color = database['settings']['field_background_color']
 field_font_color = database['settings']['field_font_color']
@@ -91,16 +87,14 @@ window.title(database['settings']['window_title'])
 window_width = database['settings']['window_width']
 window_length = database['settings']['window_length']
 screen_width = window.winfo_screenwidth()
-# screen_height = window.winfo_screenheight()
+    # screen_height = window.winfo_screenheight()
 window.geometry(f'{window_width}x{window_length}+%d+%d' % (screen_width/1.9, 0))    # (screen_width/2-275, screen_height/8) - position to the middle of the screen
 window.resizable(0,0)   # locks the main window
 window.configure(background=background_color)
-
 # WINDOW ICON
 working_directory = os.path.dirname(__file__)
 path_icon = Path(working_directory, "pictures", "icon.ico") 
 window.iconbitmap(path_icon)
-
 # COPY TO CLIPBOARD AT START
 pyperclip.copy(database['contacts']['email'])
 
@@ -112,18 +106,15 @@ def create_text(text, x, y):
     self[text] = Title(text, font_style, font_size).create()
     self[text].place(x=x, y=y)
 
-
 def create_field(dic_name,width, height, x, y):     # for FULL NAME, INTRO
     self[dic_name] = Fields(width, height, field_background_color).create()
     self[dic_name].insert(END,database[dic_name])
     self[dic_name].place(x=x, y=y)
 
-
 def create_contacts_field(contacts_type, width, height, x, y):
     self[contacts_type] = Fields(width, height, field_background_color).create()
     self[contacts_type].insert(END,database['contacts'][contacts_type])
     self[contacts_type].place(x=x, y=y)
-
 
 def create_field_plus(dic_name, field_name, width, height, x, y):   # for EXPEREIENCE, EDUCATION
     unique_name = f'{item}_{field_name}'
@@ -149,14 +140,12 @@ def y_location(gap):
     location = y_base + 40 * gap
     return location
 
-
-# PACING
+## PACING
 y_base=40
 x_left_side_field = 55
 x_left_side_button = 25
 x_right_side_field = window_width-295
 x_right_side_button = window_width-325
-
 
 # FULL NAME
 create_text('FULL NAME', x_left_side_button-5, y_location(0))
