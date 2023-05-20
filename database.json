@@ -10,7 +10,8 @@
     "field_background_color": "#606060",
     "field_font_color": "white"
   },
-  "full_name": "John Dunbar",
+  "first_name": "John",
+  "last_name": "Dunbar",
   "intro": "Lieutenant John Dunbar, assigned to a remote western Civil War outpost, befriends wolves and\nNative Americans, making him an intolerable aberration in the military.\n",
   "contacts": {
     "email": "dances_w_wolves@gmail.com",
