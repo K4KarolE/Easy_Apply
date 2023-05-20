@@ -121,11 +121,6 @@ def create_field_plus(dic_name, field_name, width, height, x, y):   # for EXPERE
     self[unique_name] = Fields(width, height, field_background_color).create()
     self[unique_name].insert(END,database[dic_name][item][field_name])
     self[unique_name].place(x=x, y=y)
-    # SCROLLBAR - unnecessary, text is already scrollable
-    # if field_name == 'description':
-    #     scrollbar = ttk.Scrollbar(window, orient='vertical', command=self[dic_name].yview)
-    #     self[dic_name].configure(yscrollcommand = scrollbar.set)
-    #     # scrollbar.place(x=x, y=y) #(relx=1, rely=0, relheight=1, anchor='ne')
 
 # COPY BUTTON
 def copy(field_value):
@@ -147,10 +142,15 @@ x_left_side_button = 25
 x_right_side_field = window_width-295
 x_right_side_button = window_width-325
 
-# FULL NAME
-create_text('FULL NAME', x_left_side_button-5, y_location(0))
-create_field('full_name', 25, 1, x_left_side_field, y_location(1))
-copy_button('full_name', x_left_side_button, y_location(1))
+# FIRST NAME
+create_text('NAME', x_left_side_button-5, y_location(0))
+create_field('first_name', 10, 1, x_left_side_field, y_location(1))
+copy_button('first_name', x_left_side_button, y_location(1))
+
+# LAST NAME
+PUSH = 150
+create_field('last_name', 10, 1, x_left_side_field + PUSH, y_location(1))
+copy_button('last_name', x_left_side_button + PUSH, y_location(1))
 
 # INTRO
 create_text('INTRO', x_left_side_button-5, y_location(2))
@@ -212,8 +212,9 @@ for item in database['experience']:
 
 # SAVE BUTTON
 def save_update():
-    # FULL NAME
-    database['full_name'] = self['full_name'].get("1.0", "end-1c")
+    # NAME
+    database['first_name'] = self['first_name'].get("1.0", "end-1c")
+    database['last_name'] = self['last_name'].get("1.0", "end-1c")
     # INTRO
     database['intro'] = self['intro'].get("1.0", "end-1c")
     # CONTACTS
