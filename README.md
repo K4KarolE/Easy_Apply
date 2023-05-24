@@ -32,7 +32,7 @@ pip install -r requirements.txt
 - The 2nd page (with more `Experience` and other options) is available by clicking on the `2nd button`
 - `Skills`:
     - the 1st button copies the skill list in bulk/together
-    - the 2nd button copies the individual skills separately, pop-up message displaying the current skill in clipboard, jumps to the next skill, once the pop-up message is closed
+    - the 2nd button copies the skills ony by one, pop-up message displaying the current skill in clipboard, jumps to the next skill, once the pop-up message is closed
 
 <br>
 <div align="center">
