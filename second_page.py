@@ -98,7 +98,7 @@ def launch(window):
     path_icon = Path(working_directory, "pictures", "icon.ico") 
     top_window.iconbitmap(path_icon)
     # COPY TO CLIPBOARD AT START
-    pyperclip.copy(database['contacts']['email'])
+    pyperclip.copy(database['experience_2nd']['4']['description'])
 
 
     ### WIDGETS
