@@ -1,4 +1,6 @@
 from tkinter import *
+import tkinter.messagebox
+
 import json
 import os
 from pathlib import Path
@@ -188,6 +190,18 @@ for item in database['education']:
 create_text('SKILLS', x_right_side_button-5, y_location(17))
 create_field('skills', 26, 12, x_right_side_field, y_location(18))
 copy_button('skills', x_right_side_button, y_location(18))
+
+def copy_skills_separately():
+    skill_list = database['skills'].split('\n')
+    for skill in skill_list:
+        if skill != '':
+            skill = skill.strip('\u2022')
+            pyperclip.copy(skill)
+            tkinter.messagebox.showinfo('Skills', f"In the clipboard: {skill}")
+
+skills_separate_button = Buttons('', lambda:[copy_skills_separately()]).create()
+skills_separate_button.configure(height=1, width=2, font=(font_style, 10))
+skills_separate_button.place(x=x_right_side_button, y=y_location(18)+40)
 
 # EXPEREIENCE
 create_text('EXPERIENCE', x_left_side_button-5, y_location(7))
