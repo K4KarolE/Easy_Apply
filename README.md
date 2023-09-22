@@ -11,9 +11,8 @@
 
 # Requirements
 ### Install packages\dependencies
-```
-pip install -r requirements.txt
-```
+``` pip install -r requirements.txt ```
+
 ### Separately
 ### Python 3 - used: 3.11
 - https://www.python.org/
@@ -26,8 +25,8 @@ pip install -r requirements.txt
 
 # Guide
 - The app window opens at the right, top corner of the screen
-    - optimised for 27" display
-    - on a 17" display it is still usable
+    - optimised for `2560x1440` display
+    - on a `1920x1080` display it is still usable
 - The first row of the `Contacts` automatically added to the clipboard at the start of the app
 - The 2nd page (with more `Experience` and other options) is available by clicking on the `2nd button`
 - `Skills`:
