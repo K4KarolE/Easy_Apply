@@ -1,3 +1,7 @@
+# This / the Tkinter version window is fixed / not scrollable
+# It is optimised for 27" - 2560x1440 monitor
+# For smaller display choose the PyQt version
+
 from tkinter import *
 import tkinter.messagebox
 
@@ -9,13 +13,8 @@ import pyperclip
 import second_page
 
 
-def main_directory():
-    functions_directory = os.path.dirname(__file__)  
-    directory = functions_directory.replace("functions",'')
-    return directory
-
 def path_json(name_json):
-    path_json = Path(main_directory(), name_json)
+    path_json = Path(os.path.dirname(__file__), name_json)
     return path_json
 
 def open_db(name_json):
@@ -82,6 +81,7 @@ field_font_color = database['settings']['field_font_color']
 font_style = database['settings']['font_style']
 font_size = database['settings']['font_size']
 font_color = database['settings']['font_color']
+copy_to_clipboard_page_1 = database['settings']['copy_to_clipboard_page_1']
 
 # WINDOW
 window = Tk()
@@ -91,14 +91,16 @@ window_length = database['settings']['window_length']
 screen_width = window.winfo_screenwidth()
     # screen_height = window.winfo_screenheight()
 window.geometry(f'{window_width}x{window_length}+%d+%d' % (screen_width/1.9, 0))    # (screen_width/2-275, screen_height/8) - position to the middle of the screen
-window.resizable(0,0)   # locks the main window
+window.resizable(False, False)   # locks the main window
 window.configure(background=background_color)
 # WINDOW ICON
-working_directory = os.path.dirname(__file__)
-path_icon = Path(working_directory, "pictures", "icon.ico") 
+working_directory = Path().resolve()
+path_icon = Path(working_directory, "pictures", "icon.ico")
 window.iconbitmap(path_icon)
 # COPY TO CLIPBOARD AT START
-pyperclip.copy(database['contacts']['email'])
+if copy_to_clipboard_page_1:
+    pyperclip.copy(database['contacts']['email'])
+
 
 
 ### WIDGETS

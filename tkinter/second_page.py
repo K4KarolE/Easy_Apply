@@ -83,6 +83,7 @@ def launch(window):
     font_style = database['settings']['font_style']
     font_size = database['settings']['font_size']
     font_color = database['settings']['font_color']
+    copy_to_clipboard_page_2 = database['settings']['copy_to_clipboard_page_2']
 
     # WINDOW   
     top_window = Toplevel(window)
@@ -91,14 +92,15 @@ def launch(window):
     window_length = database['settings']['window_length']-30
     screen_width = window.winfo_screenwidth()
     top_window.geometry(f'{window_width}x{window_length}+%d+%d' % (screen_width/1.9, 30))    # (screen_width/2-275, screen_height/8) - position to the middle of the screen
-    top_window.resizable(0,0)   # locks the main window
+    top_window.resizable(False, False)   # locks the main window
     top_window.configure(background=background_color)
     # WINDOW ICON
-    working_directory = os.path.dirname(__file__)
+    working_directory = Path().resolve()
     path_icon = Path(working_directory, "pictures", "icon.ico") 
     top_window.iconbitmap(path_icon)
     # COPY TO CLIPBOARD AT START
-    pyperclip.copy(database['experience_2nd']['4']['description'])
+    if copy_to_clipboard_page_2:
+        pyperclip.copy(database['achievements_2nd'])
 
 
     ### WIDGETS

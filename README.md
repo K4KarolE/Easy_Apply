@@ -21,17 +21,17 @@
 - https://pypi.org/project/pyperclip/
 
 ### OS
-- `Windows` (tested on 10)
+- `Windows` (tested on 11)
 
-# Guide
+# Guide - Tkinter
 - The app window opens at the right, top corner of the screen
-    - optimised for `2560x1440` display
-    - on a `1920x1080` display it is still usable
-- The first row of the `Contacts` automatically added to the clipboard at the start of the app
-- The 2nd page (with more `Experience` and other options) is available by clicking on the `2nd button`
+    - optimised for `27" - 2560x1440` monitor
+    - for smaller display, the `PyQt` version recommended (in rogress)
+- The first row of the `Contacts` automatically added to the clipboard at the start of the app when the `copy_to_clipboard_page_1` set to true in `json/settings`
 - `Skills`:
     - the 1st button copies the skill list in bulk/together
     - the 2nd button copies the skills ony by one, pop-up message displaying the current skill in clipboard, jumps to the next skill, once the pop-up message is closed
+- At the launch of the 2nd page the `Achievements` field value automatically added to the clipboard when the `copy_to_clipboard_page_2` set to true in `json/settings`
 
 <br>
 <div align="center">
@@ -39,10 +39,5 @@
 </div>
 <br>
 
-# Modules used, which are part of Python 3.11
-- json
-- os
-- pathlib
-- tkinter
 
-## Thank you all who worked on the modules listed in this document!
+## Thank you all who worked on the modules used in this project!

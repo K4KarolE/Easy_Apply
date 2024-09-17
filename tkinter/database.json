@@ -8,7 +8,9 @@
     "window_length": 1070,
     "background_color": "#009AB8",
     "field_background_color": "#606060",
-    "field_font_color": "white"
+    "field_font_color": "white",
+    "copy_to_clipboard_page_1": true,
+    "copy_to_clipboard_page_2": true
   },
   "first_name": "John",
   "last_name": "Dunbar",
