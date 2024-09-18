@@ -1,0 +1,97 @@
+{
+  "settings": {
+    "font_style": "Candara",
+    "font_size": "20",
+    "font_color": "white",
+    "window_title": "Easy Apply",
+    "window_width": 1200,
+    "window_height": 1070,
+    "background_color": "#009AB8",
+    "field_background_color": "#606060",
+    "field_font_color": "white",
+    "copy_to_clipboard": true
+  },
+  "first_name": "John",
+  "last_name": "Dunbar",
+  "intro": "Lieutenant John Dunbar, assigned to a remote western Civil War outpost, befriends wolves and\nNative Americans, making him an intolerable aberration in the military.\n",
+  "contacts": {
+    "email": "dances_w_wolves@gmail.com",
+    "mobile": "+440775685458",
+    "linkedin": "linkedin/best_employee_ever",
+    "github": "github/code_warrior",
+    "website": "dances-with-numbers.com"
+  },
+  "skills": "\u2022Communication\n\u2022Teamwork\n\u2022Coding and technical literacy\n\u2022Attention to detail\n\u2022Self-management\n\u2022Multitasking\n\u2022Interpersonal skills\n\u2022Work ethic \n",
+  "achievements": "",
+  "achievements_2nd": "ach 2ndascasc",
+  "extra_2nd": "ext 2ndassas",
+  "education": {
+    "1": {
+      "school": "University of Dakota",
+      "subject": "Mathematics in Gender Theory",
+      "from_edu": "06/1855",
+      "to_edu": "08/1858"
+    },
+    "2": {
+      "school": "University of Idaho",
+      "subject": "Digital Optimization & Mating",
+      "from_edu": "06/1862",
+      "to_edu": "05/1865"
+    }
+  },
+  "languages": {
+    "English": "Professional",
+    "German": "Beginner"
+  },
+  "experience": {
+    "1": {
+      "title": "Business Analyst",
+      "company": "Google",
+      "description": "\u2022Support Change Delivery Department in the end to end delivery of Programmes and Projects by working with colleagues and other stakeholders to investigate and model business functions, business processes, information flows and data structures;\n\u2022Investigating operational issues, problems and new opportunities; seeking effective business solutions through improvements in aspects of business areas or systems of interest. Assisting in the analysis of underlying issues and their root causes, and identifying available options",
+      "from": "12/12/2019",
+      "to": "present"
+    },
+    "2": {
+      "title": "Quantitative Strategist",
+      "company": "Tesla",
+      "description": "\u2022Gathering, analysing, and documenting business requirements\n\u2022Creating prototypes (in Python or other programming languages) to validate requirements\n\u2022Creating code for production release to solve business led functional requirements\n\u2022Definition and maintenance of quality assurance (QA) test plans\n\u2022Assisting in user acceptance testing (UAT) and rollout",
+      "from": "06/11/2017",
+      "to": "08/11/2019"
+    },
+    "3": {
+      "title": "Cybersecurity Analyst",
+      "company": "Backdoor & Co.",
+      "description": "\u2022Monitor security events and identify potential incidents across the organization environments (Corporate, Production, Development)\n\u2022Review alerts, assess risks and prioritize incident investigation efforts\n\u2022Develop security tools and integrations to automate security operation processes\n\u2022Interface to internal customers, gather functional requirements and design suitable security solutions aligned with business requirements",
+      "from": "05/06/2014",
+      "to": "05/11/2019"
+    },
+    "4": {
+      "title": "BA 2nd",
+      "company": "G 2nd",
+      "description": "DESC 2nd",
+      "from": "1",
+      "to": "1"
+    },
+    "5": {
+      "title": "2 t",
+      "company": "2 c",
+      "description": "2 des",
+      "from": "2 f",
+      "to": "2 t"
+    },
+    "6": {
+      "title": "3 t",
+      "company": "3 c",
+      "description": "3 des",
+      "from": "3 f",
+      "to": "3 t"
+    },
+    "7": {
+      "title": "4 t",
+      "company": "4 c",
+      "description": "4 des",
+      "from": "4 f ",
+      "to": "4 t"
+    }
+  }
+}
