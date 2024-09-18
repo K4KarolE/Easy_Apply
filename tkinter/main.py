@@ -13,18 +13,22 @@ import pyperclip
 import second_page
 
 
-def path_json(name_json):
-    path_json = Path(os.path.dirname(__file__), name_json)
+def get_path_json():
+    path_json = Path(Path(__file__).parent, "database.json")
+    print(path_json)
     return path_json
 
-def open_db(name_json):
-    f = open(path_json(name_json))
+def open_db():
+    f = open(path_json)
     json_dictionary = json.load(f)
     return json_dictionary
 
-def save_db(database):
-    with open(path_json('database.json'), 'w') as f:
+def save_db():
+    with open(path_json, 'w') as f:
         json.dump(database, f, indent=2)
+
+
+
 
 # BUTTONS
 class Buttons:
@@ -74,7 +78,8 @@ class Title:
                      background=background_color)
 
 # LOAD DB
-database = open_db("database.json")
+path_json = get_path_json()
+database = open_db()
 background_color = database['settings']['background_color']
 field_background_color = database['settings']['field_background_color']
 field_font_color = database['settings']['field_font_color']
@@ -248,7 +253,7 @@ def save_update():
         for field_name in database['experience'][item]:
             unique_name = f'{item}_{field_name}'
             database['experience'][item][field_name] = self[unique_name].get("1.0", "end-1c")
-    save_db(database)
+    save_db()
 
 save_button = Buttons('Save', save_update).create()
 save_button.place(x=window_width-95, y=y_location(0)+10)
