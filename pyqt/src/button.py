@@ -1,15 +1,17 @@
 from PyQt6.QtWidgets import QPushButton
 from PyQt6.QtCore import Qt
 
-from .class_data import cv
+import pyperclip
+
+from .data import cv
 
 
 class MyButton(QPushButton):
-    def __init__(self, window, pos_x, pos_y, func):
+    def __init__(self, pos_x, pos_y, input_field):
         super().__init__()
-        self.setParent(window)
+        self.setParent(cv.window_widgets)
         self.setCursor(Qt.CursorShape.PointingHandCursor)
-        self.clicked.connect(lambda: func())
+        self.clicked.connect(lambda: pyperclip.copy(input_field.toPlainText()))
         self.setGeometry(pos_x, pos_y, 40, 40)
         self.setCursor(Qt.CursorShape.PointingHandCursor)
         self.setStyleSheet(

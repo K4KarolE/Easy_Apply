@@ -2,18 +2,18 @@ from PyQt6.QtGui import QIcon
 from PyQt6.QtWidgets import (
     QApplication,
     QScrollArea,
-    QScrollBar,
     QMainWindow
     )
 
 
 import sys
-import pyperclip
 
 
 from src import (
     cv,
-    MyButton
+    MyButton,
+    MyTextField,
+    MyScrollBar
 )
 
 
@@ -30,49 +30,31 @@ QSCROLLAREA WINDOW <-- QWIDGET WINDOW <-- QWIDGETS
 window_main = QScrollArea()
 window_main.setWindowTitle(cv.WINDOW_TITLE)
 window_main.setWindowIcon(QIcon('pictures/icon.ico'))
-window_main.setStyleSheet(f"background-color: {cv.BACKGROUND_COLOR};") 
+window_main.setStyleSheet(f"background-color: {cv.BACKGROUND_COLOR};")
 
 
 # QWIDGET WINDOW
-window_widgets = QMainWindow()
-window_widgets.setStyleSheet(f"background-color: {cv.BACKGROUND_COLOR};") 
+cv.window_widgets = QMainWindow()
+cv.window_widgets.setStyleSheet(f"background-color: {cv.BACKGROUND_COLOR};") 
 
 
 ''' SCROLL BARS '''
-scroll_bar_ver = QScrollBar()
-scroll_bar_ver.setStyleSheet(
-                            "QScrollBar::vertical"
-                                "{"
-                                "width: 10px;"
-                                "}"
-                            )
-
-scroll_bar_hor = QScrollBar()
-scroll_bar_hor.setStyleSheet(
-                            "QScrollBar::horizontal"
-                                "{"
-                                "height: 10px;"
-                                "}"
-                            )
-
-window_main.setVerticalScrollBar(scroll_bar_ver)
-window_main.setHorizontalScrollBar(scroll_bar_hor)
+MyScrollBar(window_main)
 
 
 
 ''' WIDGETS '''
-def button_test():
-    print("\nTEST\n")
+testql = MyTextField(120, 80, "job_description", "hello")
+testb = MyButton(60, 80, testql)
 
-testb = MyButton(window_widgets, 60, 60, button_test)
 
 
 
 
 window_main.resize(cv.WINDOW_WIDTH, cv.WINDOW_HEIGHT)
-window_widgets.resize(cv.WINDOW_WIDTH, cv.WINDOW_HEIGHT)
+cv.window_widgets.resize(cv.WINDOW_WIDTH, cv.WINDOW_HEIGHT)
 
-window_main.setWidget(window_widgets)
+window_main.setWidget(cv.window_widgets)
 window_main.show()
 
 sys.exit(app.exec())

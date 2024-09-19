@@ -26,6 +26,8 @@ class Data:
     WINDOW_TITLE: str = db['settings']['window_title']
     WINDOW_WIDTH: int = db['settings']['window_width']
     WINDOW_HEIGHT: int = db['settings']['window_height']
+    
+    window_widgets: object = None
 
     BACKGROUND_COLOR: str = db['settings']['background_color']
     FIELD_BACKGROUND_COLOR: str = db['settings']['field_background_color']
