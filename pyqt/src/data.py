@@ -4,7 +4,7 @@ from json import load, dump
 
 
 def get_path_json():
-    path_json = Path(Path().resolve(), "pyqt", "database_pyqt.json")
+    path_json = Path(Path().resolve(), 'pyqt', 'database_pyqt.json')
     return path_json
 
 def open_db():
@@ -23,19 +23,19 @@ db = open_db()
 
 @dataclass
 class Data:
-    WINDOW_TITLE: str = db['settings']['window_title']
+    window_widgets: object = None
+    
     WINDOW_WIDTH: int = db['settings']['window_width']
     WINDOW_HEIGHT: int = db['settings']['window_height']
     
-    window_widgets: object = None
-
     BACKGROUND_COLOR: str = db['settings']['background_color']
     FIELD_BACKGROUND_COLOR: str = db['settings']['field_background_color']
-    FIELD_FONT_COLOR: str = db['settings']['field_font_color']
-    FONT_STYLE: str = db['settings']['font_style']
-    FONT_SIZE: str = db['settings']['font_size']
-    FONT_COLOR: str = db['settings']['font_color']
-    COPY_TO_CLIPBOARD: bool = db['settings']['copy_to_clipboard']
+    TEXT_FIELD_FONT_STYLE: str = db['settings']['text_field_font_style']
+    TEXT_FIELD_FONT_SIZE: int = db['settings']['text_field_font_size']
+    TEXT_FIELD_FONT_COLOR: str = db['settings']['text_field_font_color']
+    SKILLS_POP_UP_WINDOW_POS_X: int = db['settings']['skills_pop_up_window_pos_x']
+    SKILLS_POP_UP_WINDOW_POS_Y: int = db['settings']['skills_pop_up_window_pos_y']
+
 
 
 cv = Data()

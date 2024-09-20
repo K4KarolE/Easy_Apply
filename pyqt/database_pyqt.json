@@ -1,15 +1,14 @@
 {
   "settings": {
-    "font_style": "Candara",
-    "font_size": "20",
-    "font_color": "white",
-    "window_title": "Easy Apply",
     "window_width": 1200,
     "window_height": 1070,
     "background_color": "#009AB8",
     "field_background_color": "#606060",
-    "field_font_color": "white",
-    "copy_to_clipboard": true
+    "text_field_font_style": "Candara",
+    "text_field_font_size": 15,
+    "text_field_font_color": "white",
+    "skills_pop_up_window_pos_x": 600,
+    "skills_pop_up_window_pos_y": 600
   },
   "first_name": "John",
   "last_name": "Dunbar",

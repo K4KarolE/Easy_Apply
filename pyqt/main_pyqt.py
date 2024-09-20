@@ -13,7 +13,8 @@ from src import (
     cv,
     MyButton,
     MyTextField,
-    MyScrollBar
+    MyScrollBar,
+    MyTitle
 )
 
 
@@ -28,7 +29,7 @@ QSCROLLAREA WINDOW <-- QWIDGET WINDOW <-- QWIDGETS
 '''
 # MAIN / QSCROLL AREA WINDOW
 window_main = QScrollArea()
-window_main.setWindowTitle(cv.WINDOW_TITLE)
+window_main.setWindowTitle("Easy Apply")
 window_main.setWindowIcon(QIcon('pictures/icon.ico'))
 window_main.setStyleSheet(f"background-color: {cv.BACKGROUND_COLOR};")
 
@@ -44,8 +45,15 @@ MyScrollBar(window_main)
 
 
 ''' WIDGETS '''
-testql = MyTextField(120, 80, "job_description", "hello")
-testb = MyButton(60, 80, testql)
+skills_text_field = MyTextField(120, 80, 'job_description', 'hello')
+
+skills_copy_all_button = MyButton(60, 80, skills_text_field)
+
+skills_copy_separately_button = MyButton(60, 120, skills_text_field)
+skills_copy_separately_button.clicked.connect(lambda: skills_copy_separately_button.copy_skills_separately())
+
+
+MyTitle(150, 250, 'EXPERIENCE')
 
 
 
