@@ -210,7 +210,7 @@ skills_separate_button = Buttons('', lambda:[copy_skills_separately()]).create()
 skills_separate_button.configure(height=1, width=2, font=(font_style, 10))
 skills_separate_button.place(x=x_right_side_button, y=y_location(18)+40)
 
-# EXPEREIENCE
+# EXPERIENCE
 create_text('EXPERIENCE', x_left_side_button-5, y_location(7))
 n=8
 for item in database['experience']:
