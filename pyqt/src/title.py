@@ -13,6 +13,6 @@ class MyTitle(QLabel):
         self.move(pos_x, pos_y)
         self.setStyleSheet(
             "color:white;"
-            "font: 25pt Candara;"
+            "font: 20pt Candara;"
             "font-weight: bold;"
             )

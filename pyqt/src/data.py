@@ -35,7 +35,18 @@ class Data:
     TEXT_FIELD_FONT_COLOR: str = db['settings']['text_field_font_color']
     SKILLS_POP_UP_WINDOW_POS_X: int = db['settings']['skills_pop_up_window_pos_x']
     SKILLS_POP_UP_WINDOW_POS_Y: int = db['settings']['skills_pop_up_window_pos_y']
+    BUTTON_AND_LINE_FIELD_HEIGHT: int = db['settings']['button_and_line_field_height']
 
+    ''' 
+        Field objects placed in the dic. in the
+        src / text_field classes to able to
+        iterate over at save
+    '''
+    dic = {}
+    for key in db:
+        if key != "settings":
+            dic[key] = {}
+            dic[key] = db[key]
 
 
 cv = Data()

@@ -10,17 +10,17 @@ from .message_box import MyMessageBox
 class MyButton(QPushButton):
     def __init__(self, pos_x, pos_y, input_field):
         super().__init__()
-        self.input_field = input_field
+        button_size = cv.BUTTON_AND_LINE_FIELD_HEIGHT
+        # self.input_field = input_field
         self.setParent(cv.window_widgets)
         self.setCursor(Qt.CursorShape.PointingHandCursor)
-        button_size = 30
         self.setGeometry(pos_x, pos_y, button_size, button_size)
         self.setCursor(Qt.CursorShape.PointingHandCursor)
         self.setStyleSheet(
                     "QPushButton"
                         "{"
                         f"background: QLinearGradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 white, stop: 0.3 {cv.BACKGROUND_COLOR}, stop: 0.6 {cv.BACKGROUND_COLOR}, stop: 1 {cv.FIELD_BACKGROUND_COLOR} );"
-                        "border-radius: 5px;"
+                        "border-radius: 2px;"
                         "border: 2px solid black;"
                         "}"
 
@@ -29,8 +29,11 @@ class MyButton(QPushButton):
                         f"background-color : {cv.FIELD_BACKGROUND_COLOR};"
                         "}"
                     )
-        self.clicked.connect(lambda: pyperclip.copy(self.input_field.toPlainText()))
-    
+        # MyTextLine(QLineEdit), MyTextField(QTextEdit) have diff. copy methods
+        if "MyTextLine" in str(input_field.__class__):
+            self.clicked.connect(lambda: pyperclip.copy(input_field.text()))
+        else:
+            self.clicked.connect(lambda: pyperclip.copy(input_field.toPlainText()))
 
 
     def copy_skills_separately(self):

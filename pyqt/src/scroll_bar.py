@@ -16,7 +16,7 @@ class ScrollBarVer(QScrollBar):
         self.setStyleSheet(
                             "QScrollBar::vertical"
                                 "{"
-                                "width: 10px;"
+                                "width: 15px;"
                                 "}"
                             )
 
@@ -28,7 +28,7 @@ class ScrollBarHor(QScrollBar):
         self.setStyleSheet(
                             "QScrollBar::horizontal"
                                 "{"
-                                "height: 10px;"
+                                "height: 15px;"
                                 "}"
                             )
     

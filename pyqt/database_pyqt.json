@@ -5,14 +5,20 @@
     "background_color": "#009AB8",
     "field_background_color": "#606060",
     "text_field_font_style": "Candara",
-    "text_field_font_size": 15,
+    "text_field_font_size": 13,
     "text_field_font_color": "white",
     "skills_pop_up_window_pos_x": 600,
-    "skills_pop_up_window_pos_y": 600
+    "skills_pop_up_window_pos_y": 600,
+    "button_and_line_field_height": 25
   },
-  "first_name": "John",
-  "last_name": "Dunbar",
-  "intro": "Lieutenant John Dunbar, assigned to a remote western Civil War outpost, befriends wolves and\nNative Americans, making him an intolerable aberration in the military.\n",
+  "mixed": {
+    "first_name": "John",
+    "last_name": "Dunbar",
+    "intro": "Lieutenant John Dunbar, assigned to a remote western Civil War outpost, befriends wolves and\nNative Americans, making him an intolerable aberration in the military.\n",
+    "achievements": "",
+    "skills": "\u2022Communication\n\u2022Teamwork\n\u2022Coding and technical literacy\n\u2022Attention to detail\n\u2022Self-management\n\u2022Multitasking\n\u2022Interpersonal skills\n\u2022Work ethic \n",
+    "extra": "ext 2ndassas"
+  },
   "contacts": {
     "email": "dances_w_wolves@gmail.com",
     "mobile": "+440775685458",
@@ -20,10 +26,6 @@
     "github": "github/code_warrior",
     "website": "dances-with-numbers.com"
   },
-  "skills": "\u2022Communication\n\u2022Teamwork\n\u2022Coding and technical literacy\n\u2022Attention to detail\n\u2022Self-management\n\u2022Multitasking\n\u2022Interpersonal skills\n\u2022Work ethic \n",
-  "achievements": "",
-  "achievements_2nd": "ach 2ndascasc",
-  "extra_2nd": "ext 2ndassas",
   "education": {
     "1": {
       "school": "University of Dakota",
@@ -37,10 +39,6 @@
       "from_edu": "06/1862",
       "to_edu": "05/1865"
     }
-  },
-  "languages": {
-    "English": "Professional",
-    "German": "Beginner"
   },
   "experience": {
     "1": {
@@ -88,7 +86,7 @@
     "7": {
       "title": "4 t",
       "company": "4 c",
-      "description": "4 des",
+      "description": "4 des - LAST ONE",
       "from": "4 f ",
       "to": "4 t"
     }

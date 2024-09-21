@@ -5,13 +5,13 @@ from PyQt6.QtWidgets import (
     QMainWindow
     )
 
-
 import sys
-
 
 from src import (
     cv,
+    db,
     MyButton,
+    MyTextLine,
     MyTextField,
     MyScrollBar,
     MyTitle
@@ -45,22 +45,65 @@ MyScrollBar(window_main)
 
 
 ''' WIDGETS '''
-skills_text_field = MyTextField(120, 80, 'job_description', 'hello')
+def y_location(gap):
+    location = Y_BASE + 40 * gap
+    return location
 
-skills_copy_all_button = MyButton(60, 80, skills_text_field)
+## PACING
+Y_BASE=40
+X_LEFT_SIDE_BASE = 25
+X_LEFT_SIDE_FIELD = X_LEFT_SIDE_BASE + 30
 
-skills_copy_separately_button = MyButton(60, 120, skills_text_field)
-skills_copy_separately_button.clicked.connect(lambda: skills_copy_separately_button.copy_skills_separately())
+# NAME
+MyTitle(X_LEFT_SIDE_BASE, y_location(0), 'NAME')
+# FIRST NAME
+MyTextLine(X_LEFT_SIDE_FIELD, y_location(1),'name', 'mixed','first_name')
+MyButton(X_LEFT_SIDE_BASE, y_location(1), cv.dic['mixed']['first_name'])
+# LAST NAME
+PUSH = 150
+MyTextLine(X_LEFT_SIDE_FIELD + PUSH, y_location(1), 'name', 'mixed','last_name')
+MyButton(X_LEFT_SIDE_BASE + PUSH, y_location(1), cv.dic['mixed']['last_name'])
 
 
-MyTitle(150, 250, 'EXPERIENCE')
+# INTRO
+MyTitle(X_LEFT_SIDE_BASE, y_location(2), 'INTRO')
+MyTextField(X_LEFT_SIDE_FIELD, y_location(3), 'intro','mixed','intro')
+MyButton(X_LEFT_SIDE_BASE, y_location(3), cv.dic['mixed']['intro'])
+
+
+# EXPEREIENCE
+MyTitle(X_LEFT_SIDE_BASE, y_location(7), 'EXPERIENCE')
+
+n = 8
+X_LEFT_SIDE_FIELD_2nd = X_LEFT_SIDE_FIELD + 300
+X_LEFT_SIDE_BASE_2nd = X_LEFT_SIDE_BASE + 300
+for key in db["experience"]:
+    MyTextLine(X_LEFT_SIDE_FIELD, y_location(n), 'long', 'experience', key, 'title')
+    MyButton(X_LEFT_SIDE_BASE, y_location(n), cv.dic['experience'][key]['title'])
+    
+    MyTextLine(X_LEFT_SIDE_FIELD_2nd, y_location(n), 'date', 'experience', key, 'from')
+    MyButton(X_LEFT_SIDE_BASE_2nd, y_location(n), cv.dic['experience'][key]['from'])
+
+    MyTextLine(X_LEFT_SIDE_FIELD, y_location(n+1), 'long', 'experience', key, 'company')
+    MyButton(X_LEFT_SIDE_BASE, y_location(n+1), cv.dic['experience'][key]['company'])
+    
+    MyTextLine(X_LEFT_SIDE_FIELD_2nd, y_location(n+1), 'date', 'experience', key, 'to')
+    MyButton(X_LEFT_SIDE_BASE_2nd, y_location(n+1), cv.dic['experience'][key]['to'])
+
+    MyTextField(X_LEFT_SIDE_FIELD, y_location(n+2), 'job_description', 'experience', key, 'description')
+    MyButton(X_LEFT_SIDE_BASE, y_location(n+2), cv.dic['experience'][key]['description'])
+
+    n += 9
+
+window_widgets_height = y_location(n)
 
 
 
 
 
+ 
 window_main.resize(cv.WINDOW_WIDTH, cv.WINDOW_HEIGHT)
-cv.window_widgets.resize(cv.WINDOW_WIDTH, cv.WINDOW_HEIGHT)
+cv.window_widgets.resize(cv.WINDOW_WIDTH, window_widgets_height)
 
 window_main.setWidget(cv.window_widgets)
 window_main.show()
