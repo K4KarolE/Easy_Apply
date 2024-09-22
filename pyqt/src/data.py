@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 from pathlib import Path
 from json import load, dump
+from copy import deepcopy
 
 
 def get_path_json():
@@ -36,6 +37,8 @@ class Data:
     SKILLS_POP_UP_WINDOW_POS_X: int = db['settings']['skills_pop_up_window_pos_x']
     SKILLS_POP_UP_WINDOW_POS_Y: int = db['settings']['skills_pop_up_window_pos_y']
     BUTTON_AND_LINE_FIELD_HEIGHT: int = db['settings']['button_and_line_field_height']
+    INTRO_AND_JOBDESC_WIDTH: int = db['settings']['intro_and_jobdesc_width']
+
 
     ''' 
         Field objects placed in the dic. in the
@@ -46,7 +49,6 @@ class Data:
     for key in db:
         if key != "settings":
             dic[key] = {}
-            dic[key] = db[key]
-
+            dic[key] = deepcopy(db[key])
 
 cv = Data()

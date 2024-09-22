@@ -18,3 +18,16 @@ class MyMessageBox(QMessageBox):
         self.move(cv.SKILLS_POP_UP_WINDOW_POS_X, cv.SKILLS_POP_UP_WINDOW_POS_Y)
         self.setText(f'Skill in the clipborad:  {message}        ')
         self.exec()
+
+
+
+class MyWarningMessageBox(QMessageBox):
+    ''' Used for the Save button '''
+    def __init__(self):
+        super().__init__()
+        self.setWindowTitle('ERROR')
+        self.setWindowIcon(QIcon('pictures/settings.png'))
+        self.setIcon(QMessageBox.Icon.Warning)
+        self.setStandardButtons(QMessageBox.StandardButton.Ok)
+        self.setText(f'Sorry, something went wrong while saving the form      ')
+        self.exec()

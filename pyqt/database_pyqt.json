@@ -1,6 +1,6 @@
 {
   "settings": {
-    "window_width": 1200,
+    "window_width": 1110,
     "window_height": 1070,
     "background_color": "#009AB8",
     "field_background_color": "#606060",
@@ -9,15 +9,16 @@
     "text_field_font_color": "white",
     "skills_pop_up_window_pos_x": 600,
     "skills_pop_up_window_pos_y": 600,
-    "button_and_line_field_height": 25
+    "button_and_line_field_height": 25,
+    "intro_and_jobdesc_width": 700
   },
   "mixed": {
     "first_name": "John",
     "last_name": "Dunbar",
     "intro": "Lieutenant John Dunbar, assigned to a remote western Civil War outpost, befriends wolves and\nNative Americans, making him an intolerable aberration in the military.\n",
-    "achievements": "",
-    "skills": "\u2022Communication\n\u2022Teamwork\n\u2022Coding and technical literacy\n\u2022Attention to detail\n\u2022Self-management\n\u2022Multitasking\n\u2022Interpersonal skills\n\u2022Work ethic \n",
-    "extra": "ext 2ndassas"
+    "achievements": "\u2022Saved a woman\n\u2022Saved a child\n\u2022Saved a village\n\u2022Got married",
+    "skills": "\u2022Making friends\n\u2022Teamwork\n\u2022Coding and technical literacy\n\u2022Attention to detail\n\u2022Self-management\n\u2022Multitasking\n\u2022Interpersonal skills\n\u2022Work ethic",
+    "extra": "extra"
   },
   "contacts": {
     "email": "dances_w_wolves@gmail.com",
@@ -30,14 +31,14 @@
     "1": {
       "school": "University of Dakota",
       "subject": "Mathematics in Gender Theory",
-      "from_edu": "06/1855",
-      "to_edu": "08/1858"
+      "from": "06/1855",
+      "to": "08/1858"
     },
     "2": {
       "school": "University of Idaho",
       "subject": "Digital Optimization & Mating",
-      "from_edu": "06/1862",
-      "to_edu": "05/1865"
+      "from": "06/1862",
+      "to": "05/1865"
     }
   },
   "experience": {
@@ -63,32 +64,32 @@
       "to": "05/11/2019"
     },
     "4": {
-      "title": "BA 2nd",
-      "company": "G 2nd",
-      "description": "DESC 2nd",
-      "from": "1",
-      "to": "1"
+      "title": "",
+      "company": "",
+      "description": "",
+      "from": "",
+      "to": ""
     },
     "5": {
-      "title": "2 t",
-      "company": "2 c",
-      "description": "2 des",
-      "from": "2 f",
-      "to": "2 t"
+      "title": "",
+      "company": "",
+      "description": "",
+      "from": "",
+      "to": ""
     },
     "6": {
-      "title": "3 t",
-      "company": "3 c",
-      "description": "3 des",
-      "from": "3 f",
-      "to": "3 t"
+      "title": "",
+      "company": "",
+      "description": "",
+      "from": "",
+      "to": ""
     },
     "7": {
-      "title": "4 t",
-      "company": "4 c",
-      "description": "4 des - LAST ONE",
-      "from": "4 f ",
-      "to": "4 t"
+      "title": "LAST ONE",
+      "company": "",
+      "description": "",
+      "from": "",
+      "to": ""
     }
   }
 }
