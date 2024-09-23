@@ -30,18 +30,26 @@
 - The first row of the `Contacts` automatically added to the clipboard at the start of the app when the `copy_to_clipboard_page_1` set to true in `json/settings`
 - `Skills`:
     - the 1st button copies the skill list in bulk/together
-    - the 2nd button copies the skills one by one, pop-up message displaying the current skill in clipboard, jumps to the next skill, once the pop-up message is closed
+    - the 2nd button copies the skills one by one, pop-up message displaying the current skill in clipboard, jumps to the next skill, once the pop-up message is closed (ideal for `Workday ATS`)
 - At the launch of the 2nd page the `Achievements` field value automatically added to the clipboard when the `copy_to_clipboard_page_2` set to true in `json/settings`
+
+<br>
+<div align="center">
+<img src="pictures/screenshot_skills.png" align="center"></img> 
+</div>
+</br>
 
 # Guide - PyQt (latest version)
 - Buttons behave the same way as in the `Tkinter` version
 - Window is scrollable, the window size is not fixed
 - Once a field (QTextEdit) overloaded with text, scrollbar is displayed on the widget
+- Creating more `Contacts`, `Education`, `Experience` sections:
+    - In the `database_pyqt.json` just add another key-value pair or sub dictionary in these sections, no other adjustment needed
 
 <br>
 <div align="center">
-    <img src="pictures/screenshot_skills.png"</img> 
+<img src="pictures/screenshot_update.png" align="center"></img> 
 </div>
-<br>
+</br>
 
 ## Thank you all who worked on the modules used in this project!

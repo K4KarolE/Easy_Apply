@@ -15,6 +15,7 @@ class MyTextLine(QLineEdit):
         self.setCursor(Qt.CursorShape.IBeamCursor)
         self.setFont(QFont(cv.TEXT_FIELD_FONT_STYLE, cv.TEXT_FIELD_FONT_SIZE, 500))
         self.setStyleSheet(
+                        "qproperty-cursorPosition: 0;"  # text length > field length
                         f"background-color: {cv.FIELD_BACKGROUND_COLOR};"
                         "border-radius: 2px;"
                         "border: 2px solid black;"

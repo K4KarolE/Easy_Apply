@@ -109,7 +109,6 @@ for key in db["contacts"]:
 
 
 # EDUCATION
-n = 6
 MyTitle(X_RIGHT_SIDE_BASE, y_location(n), 'EDUCATION')
 
 PUSH_DATE = 150
@@ -119,18 +118,20 @@ for key in db["education"]:
     MyTextLine(X_RIGHT_SIDE_FIELD, y_location(n+1), 'long', 'education', key, 'school')
     MyButton(X_RIGHT_SIDE_BASE, y_location(n+1), cv.dic['education'][key]['school'])
     
-    MyTextLine(X_RIGHT_SIDE_FIELD, y_location(n+1), 'long', 'education', key, 'subject')
-    MyButton(X_RIGHT_SIDE_BASE, y_location(n+1), cv.dic['education'][key]['subject'])
+    MyTextLine(X_RIGHT_SIDE_FIELD, y_location(n+2), 'long', 'education', key, 'subject')
+    MyButton(X_RIGHT_SIDE_BASE, y_location(n+2), cv.dic['education'][key]['subject'])
 
-    MyTextLine(X_RIGHT_SIDE_FIELD, y_location(n+2), 'date', 'education', key, 'from')
-    MyButton(X_RIGHT_SIDE_BASE, y_location(n+2), cv.dic['education'][key]['from'])
+    MyTextLine(X_RIGHT_SIDE_FIELD, y_location(n+3), 'date', 'education', key, 'from')
+    MyButton(X_RIGHT_SIDE_BASE, y_location(n+3), cv.dic['education'][key]['from'])
     
-    MyTextLine(X_RIGHT_SIDE_FIELD_2nd, y_location(n+2), 'date', 'education', key, 'to')
-    MyButton(X_RIGHT_SIDE_BASE_2nd, y_location(n+2), cv.dic['education'][key]['to'])
-
-    n += 2
+    MyTextLine(X_RIGHT_SIDE_FIELD_2nd, y_location(n+3), 'date', 'education', key, 'to')
+    MyButton(X_RIGHT_SIDE_BASE_2nd, y_location(n+3), cv.dic['education'][key]['to'])
+    
+    if key != list(db["education"])[-1]:
+        n += 3.2
 
 # SKILLS
+n += 3
 MyTitle(X_RIGHT_SIDE_BASE, y_location(n+1), 'SKILLS')
 MyTextField(X_RIGHT_SIDE_FIELD, y_location(n+2), 'bulk', 'mixed', 'skills')
 MyButton(X_RIGHT_SIDE_BASE, y_location(n+2), cv.dic['mixed']['skills'])
@@ -139,14 +140,14 @@ b_sep.clicked.connect(lambda: b_sep.copy_skills_separately())
 
 
 # ACHIEVEMENTS
-n = n + 7.8
+n += 7.5
 MyTitle(X_RIGHT_SIDE_BASE, y_location(n), 'ACHIEVEMENTS')
 MyTextField(X_RIGHT_SIDE_FIELD, y_location(n+1), 'bulk_tall', 'mixed', 'achievements')
 MyButton(X_RIGHT_SIDE_BASE, y_location(n+1), cv.dic['mixed']['achievements'])
 
 
 # EXTRA
-n = n + 10
+n += 9.5
 MyTitle(X_RIGHT_SIDE_BASE, y_location(n), 'EXTRA')
 MyTextField(X_RIGHT_SIDE_FIELD, y_location(n+1), 'bulk_tall', 'mixed', 'extra')
 MyButton(X_RIGHT_SIDE_BASE, y_location(n+1), cv.dic['mixed']['extra'])
