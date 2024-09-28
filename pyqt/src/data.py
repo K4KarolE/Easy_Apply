@@ -41,14 +41,12 @@ class Data:
 
 
     ''' 
-        Field objects placed in the dic. in the
+        Field objects placed the below "dic" in the
         src / text_field classes to able to
         iterate over at save
     '''
-    dic = {}
-    for key in db:
-        if key != "settings":
-            dic[key] = {}
-            dic[key] = deepcopy(db[key])
+    dic = deepcopy(db)
+    dic.pop('settings')
+
 
 cv = Data()
