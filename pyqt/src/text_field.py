@@ -24,6 +24,7 @@ class MyTextLine(QLineEdit):
         field_height = cv.BUTTON_AND_LINE_FIELD_HEIGHT
         size_dic = {
             'name': [100, field_height],
+            'full_name': [150, field_height],
             'date': [100, field_height],
             'long': [250, field_height],    # job title, company, school
         }

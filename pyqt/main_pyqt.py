@@ -59,7 +59,9 @@ MyButton(X_LEFT_SIDE_BASE, y_location(1), cv.dic['mixed']['first_name'])
 PUSH = 150
 MyTextLine(X_LEFT_SIDE_FIELD + PUSH, y_location(1), 'name', 'mixed','last_name')
 MyButton(X_LEFT_SIDE_BASE + PUSH, y_location(1), cv.dic['mixed']['last_name'])
-
+# FULL NAME
+MyTextLine(X_LEFT_SIDE_FIELD + PUSH*2, y_location(1), 'full_name', 'mixed','full_name')
+MyButton(X_LEFT_SIDE_BASE + PUSH*2, y_location(1), cv.dic['mixed']['full_name'])
 
 # INTRO
 MyTitle(X_LEFT_SIDE_BASE, y_location(2), 'INTRO')
