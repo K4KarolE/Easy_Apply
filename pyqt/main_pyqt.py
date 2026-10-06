@@ -11,6 +11,7 @@ from src import (
     cv,
     db,
     MyButton,
+    MyComboBox,
     MySaveButton,
     MyScrollBar,
     MyTextLine,
@@ -106,7 +107,7 @@ MyTitle(X_RIGHT_SIDE_BASE, y_location(0), 'CONTACTS')
 n = 1
 for key in db["contacts"]:
     MyTextLine(X_RIGHT_SIDE_FIELD, y_location(n), 'long', 'contacts', key)
-    MyButton(X_RIGHT_SIDE_BASE, y_location(n), cv.dic['contacts'][key])
+    MyButton(X_RIGHT_SIDE_BASE, y_location(n), cv.dic['contacts'][key], key)
     n += 1
 
 
@@ -156,8 +157,16 @@ MyButton(X_RIGHT_SIDE_BASE, y_location(n+1), cv.dic['mixed']['extra'])
 
 
 # SAVE
-MySaveButton(cv.WINDOW_WIDTH - 105, 20, 60, 30)
+pos_x = cv.WINDOW_WIDTH - 105
+pos_y = 20
+width = 60
+height = 30
+MySaveButton(pos_x, pos_y, width, height)
 
+
+# COPY SELECTED CONTACT FIELD VALUE TO CLIPBOARD AT STARTUP
+width_cb = 40
+MyComboBox(pos_x - width_cb - 10, pos_y, width_cb, height)
 
 window_main.resize(cv.WINDOW_WIDTH, cv.WINDOW_HEIGHT)
 cv.window_widgets.resize(cv.WINDOW_WIDTH, window_widgets_height)

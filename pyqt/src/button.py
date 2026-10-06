@@ -1,3 +1,4 @@
+from PyQt6.QtGui import QFont
 from PyQt6.QtWidgets import QPushButton
 from PyQt6.QtCore import Qt
 
@@ -8,13 +9,16 @@ from .message_box import MyMessageBox, MyWarningMessageBox
 
 
 class MyButton(QPushButton):
-    def __init__(self, pos_x, pos_y, input_field):
+    def __init__(self, pos_x, pos_y, input_field, text=None):
         super().__init__()
         button_size = cv.BUTTON_AND_LINE_FIELD_HEIGHT
         self.input_field = input_field
         self.setParent(cv.window_widgets)
         self.setCursor(Qt.CursorShape.PointingHandCursor)
         self.setGeometry(pos_x, pos_y, button_size, button_size)
+        if text:
+            self.setText(text)
+        self.setFont(QFont(cv.TEXT_FIELD_FONT_STYLE, cv.TEXT_FIELD_FONT_SIZE - 2, 600))
         self.setStyleSheet(
                     "QPushButton"
                         "{"
@@ -79,7 +83,10 @@ class MySaveButton(QPushButton):
     def save(self):
         try:
             for key in cv.dic:
-                if key in 'mixed contacts'.split():
+                if 'selected_contact' in key:
+                    db['selected_contact_to_clipboard_at_startup'] = cv.dic['selected_contact_object'].currentText()
+
+                elif key in 'mixed contacts'.split():
                     for sub_key in cv.dic[key]:
                         self.obj = cv.dic[key][sub_key]
                         db[key][sub_key] = self.get_text()
@@ -99,6 +106,3 @@ class MySaveButton(QPushButton):
             return self.obj.text()
         else:
             return self.obj.toPlainText()
-
-
-    
