@@ -22,12 +22,13 @@
     "extra": "extra"
   },
   "contacts": {
-    "email": "dances_w_wolves@gmail.com",
-    "mobile": "+440775685458",
-    "linkedin": "linkedin/best_employee_ever",
-    "github": "github/code_warrior",
-    "website": "dances-with-numbers.com"
+    "1": "dances_w_wolves@gmail.com",
+    "2": "+440775685458",
+    "3": "linkedin/best_employee_ever",
+    "4": "github/code_warrior",
+    "5": "dances-with-numbers.com"
   },
+  "selected_contact_to_clipboard_at_startup": "4",
   "education": {
     "1": {
       "school": "University of Dakota",
