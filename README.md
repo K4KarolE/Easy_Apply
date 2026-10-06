@@ -6,24 +6,23 @@
 
 <br>
 <div align="center">
-    <img src="pictures/screenshot.png"</img> 
+    <img src="pictures/screenshot.png"> 
 </div>
-<br>
 
 # Requirements
 ### Install packages\dependencies
-#### PyQT6
+#### PyQt6
 ``` pip install -r requirements_pyqt.txt ```
-#### Tkinter
+#### Tkinter - DEPRECATED
 ``` pip install -r requirements.txt ```
 
-### Python 3 - used: 3.12
+### Python - used: 3.14
 - https://www.python.org/
 
 ### OS
-- `Windows` (tested on 11)
+- Tested on `Windows 11` and `Linux Mint 22.3`
 
-# Guide - Tkinter (older version)
+# Guide - Tkinter (older version - DEPRECATED)
 - The app window opens at the right, top corner of the screen
     - optimised for `27" - 2560x1440` monitor
     - for smaller display, the `PyQt` version recommended
@@ -37,7 +36,6 @@
 <div align="center">
 <img src="pictures/screenshot_skills.png" align="center"></img> 
 </div>
-</br>
 
 # Guide - PyQt (latest version)
 - Buttons behave the same way as in the `Tkinter` version
@@ -50,6 +48,5 @@
 <div align="center">
 <img src="pictures/screenshot_update.png" align="center"></img> 
 </div>
-</br>
 
 ## Thank you all who worked on the modules used in this project!
