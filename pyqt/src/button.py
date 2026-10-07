@@ -25,6 +25,7 @@ class MyButton(QPushButton):
                         f"background: QLinearGradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 white, stop: 0.3 {cv.BACKGROUND_COLOR}, stop: 0.6 {cv.BACKGROUND_COLOR}, stop: 1 {cv.FIELD_BACKGROUND_COLOR} );"
                         "border-radius: 2px;"
                         "border: 2px solid black;"
+                        f"color: {cv.TEXT_FIELD_FONT_COLOR}"
                         "}"
 
                     "QPushButton::pressed"
